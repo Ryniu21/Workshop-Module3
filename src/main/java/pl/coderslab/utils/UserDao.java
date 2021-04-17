@@ -1,4 +1,4 @@
-package pl.coderslab.entity;
+package pl.coderslab.utils;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -101,7 +101,7 @@ public class UserDao {
         }
     }
     public static User[] findAll2() {
-        try (Connection conn = DBUtil.getConnection()) {
+        try (Connection conn = DbUtil.getConnection()) {
             User[] users = new User[0];
             PreparedStatement statement = conn.prepareStatement(SHOW_USERS_QUERY);
             ResultSet resultSet = statement.executeQuery();
