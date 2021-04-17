@@ -32,7 +32,7 @@ public class UserDao {
 
 
     public static User create (User user){
-        try (Connection connect = DBUtil.getConnection()){
+        try (Connection connect = DbUtil.getConnection()){
             try(PreparedStatement preStatement = connect.prepareStatement(CREATE_USER_QUERY, PreparedStatement.RETURN_GENERATED_KEYS)){
                 preStatement.setString(1, user.getUserName());
                 preStatement.setString(2, user.getEmail());
@@ -121,7 +121,7 @@ public class UserDao {
     }
 
     public static User read(int idToShow) {
-        try (Connection conn = DBUtil.getConnection()) {
+        try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(SHOW_ONE_USER_QUERY);
             statement.setInt(1, idToShow);
             ResultSet resultSet = statement.executeQuery();
