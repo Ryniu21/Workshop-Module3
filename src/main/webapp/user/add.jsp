@@ -96,7 +96,7 @@
                     <fieldset>
                         Username:<br><input type="text" name="username"><br>
                         Email:<br><input type="email" name="email"><br>
-                        password:<br><input type="text" name="password"><br>
+                        password:<br><input type="password" name="password"><br>
                         <input type="submit" value="Dodaj">
 
                     </fieldset>

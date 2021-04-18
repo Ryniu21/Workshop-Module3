@@ -17,18 +17,14 @@ public class UserEdit extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
 
-        //String userName = request.getParameter("username");
-        //String email = request.getParameter("email");
-        //String password = request.getParameter("password");
-//
-        //if (userName.isEmpty() || email.isEmpty() || password.isEmpty()){
-        //    response.getWriter().append("Wypełnij cały formularz");
-//
-        //} else {
-//
-        //    UserDao.create(new User(userName, email, password));
-        //    response.sendRedirect("/user/list");
-        //}
+        User user = new User();
+        user.setId(Integer.parseInt(request.getParameter("id")));
+        user.setUserName(request.getParameter("username"));
+        user.setEmail(request.getParameter("email"));
+        user.setPassword(request.getParameter("password"));
+        UserDao userDao = new UserDao();
+        userDao.update(user);
+        response.sendRedirect(request.getContextPath() + "/user/list");
 
     }
 

@@ -53,7 +53,7 @@ public class UserDao {
     }
 
     public static void remove (User user){
-        try (Connection connect = DBUtil.getConnection()){
+        try (Connection connect = DbUtil.getConnection()){
             try(PreparedStatement preStatement = connect.prepareStatement(REMOVE_USER_QUERY)){
                 preStatement.setInt(1, user.getId());
                 preStatement.executeUpdate();

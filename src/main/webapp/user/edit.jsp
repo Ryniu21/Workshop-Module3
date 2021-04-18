@@ -94,10 +94,11 @@
                     <h2>Dodaj użytkownika</h2>
                     <form action="" method="post">
                         <fieldset>
+                            <input type="hidden" name="id" value="${user.id}"/>
                             Username:<br><input value="${user.userName}" type="text" name="username"><br>
                             Email:<br><input value="${user.email}" type="email" name="email"><br>
-                            password:<br><input value="${user.text}" type="text" name="password"><br>
-                            <input type="submit" value="Dodaj">
+                            password:<br><input type="password" name="password"><br>
+                            <input type="submit" value="Edytuj">
 
                         </fieldset>
                     </form>
